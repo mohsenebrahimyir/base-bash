@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>فصل 9 گزاره شرطی | ابزارهای تحلیل مغز</title>
+  <meta name="description" content="فصل 9 گزاره شرطی | ابزارهای تحلیل مغز" />
+  <meta name="generator" content="bookdown 0.28.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="فصل 9 گزاره شرطی | ابزارهای تحلیل مغز" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="https://mohsenebrahimyir.github.io/base-bash/./img/cover.jpg" />
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="فصل 9 گزاره شرطی | ابزارهای تحلیل مغز" />
+  
+  
+  <meta name="twitter:image" content="https://mohsenebrahimyir.github.io/base-bash/./img/cover.jpg" />
+
+<meta name="author" content="محسن ابراهیمی" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="متغییر.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!DOCTYPE HTML>
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+<link 
+  rel="preconnect" 
+  href="https://fonts.gstatic.com" 
+  crossorigin
+>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300&display=swap"
+>
+<link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+>
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="stl/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">مبانی Bash</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>پیش گفتار</a></li>
+<li class="chapter" data-level="" data-path="مقدمه.html"><a href="مقدمه.html"><i class="fa fa-check"></i>مقدمه</a></li>
+<li class="chapter" data-level="1" data-path="آموزش-لینوکس-و-یونیکس.html"><a href="آموزش-لینوکس-و-یونیکس.html"><i class="fa fa-check"></i><b>1</b> آموزش لینوکس و یونیکس</a></li>
+<li class="chapter" data-level="2" data-path="مسیرها-و-پوشهها.html"><a href="مسیرها-و-پوشهها.html"><i class="fa fa-check"></i><b>2</b> مسیرها و پوشه‌ها</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="مسیرها-و-پوشهها.html"><a href="مسیرها-و-پوشهها.html#آدرس-دهی"><i class="fa fa-check"></i><b>2.1</b> آدرس دهی</a></li>
+<li class="chapter" data-level="2.2" data-path="مسیرها-و-پوشهها.html"><a href="مسیرها-و-پوشهها.html#دستورات-کاربردی"><i class="fa fa-check"></i><b>2.2</b> دستورات کاربردی</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="کار-با-فایلها-و-پوشهها.html"><a href="کار-با-فایلها-و-پوشهها.html"><i class="fa fa-check"></i><b>3</b> کار با فایل‌ها و پوشه‌ها</a></li>
+<li class="chapter" data-level="4" data-path="واژههای-کلیدی.html"><a href="واژههای-کلیدی.html"><i class="fa fa-check"></i><b>4</b> واژه‌های کلیدی</a></li>
+<li class="chapter" data-level="5" data-path="خواندن-فایل.html"><a href="خواندن-فایل.html"><i class="fa fa-check"></i><b>5</b> خواندن فایل</a></li>
+<li class="chapter" data-level="6" data-path="شل.html"><a href="شل.html"><i class="fa fa-check"></i><b>6</b> شل</a></li>
+<li class="chapter" data-level="7" data-path="حلقه-for.html"><a href="حلقه-for.html"><i class="fa fa-check"></i><b>7</b> حلقه <code>for</code></a></li>
+<li class="chapter" data-level="8" data-path="متغییر.html"><a href="متغییر.html"><i class="fa fa-check"></i><b>8</b> متغییر</a></li>
+<li class="chapter" data-level="9" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html"><i class="fa fa-check"></i><b>9</b> گزاره شرطی</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#گزاره-شرطی-conditional-statements"><i class="fa fa-check"></i><b>9.1</b> <strong>گزاره شرطی <span dir="ltr">Conditional Statements</span></strong>:</a></li>
+<li class="chapter" data-level="9.2" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#گزاره-اگر"><i class="fa fa-check"></i><b>9.2</b> گزاره اگر …</a></li>
+<li class="chapter" data-level="9.3" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#گزاره-اگر-و-دیگر"><i class="fa fa-check"></i><b>9.3</b> گزاره اگر و دیگر</a></li>
+<li class="chapter" data-level="9.4" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#گزاره-شرطی-اگر-و-دیگر-اگر-و-دیگر"><i class="fa fa-check"></i><b>9.4</b> گزاره شرطی «اگر» و «دیگر اگر» و «دیگر»</a></li>
+<li class="chapter" data-level="9.5" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#عملگر-و"><i class="fa fa-check"></i><b>9.5</b> عملگر «و»</a></li>
+<li class="chapter" data-level="9.6" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#عملگر-یا"><i class="fa fa-check"></i><b>9.6</b> عملگر «یا»</a></li>
+<li class="chapter" data-level="9.7" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#آزمونها"><i class="fa fa-check"></i><b>9.7</b> آزمون‌ها</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>منابع</a></li>
+<li class="divider"></li>
+&nbsp;
+<hr />
+<p style="text-align: center;">
+    <a href="https://mohsenebrahimy.ir/">
+    محسن ابراهیمی
+    <br/>
+    <span style="color: #808080;">
+      <em>www.mohsenebrahimy.ir</em>
+    </span>
+  </a>
+</p>
+<p style="text-align: center;">
+  <a
+    href="https://web.whatsapp.com/send?phone=989118645816" 
+    class="fa fa-whatsapp fa-3x" 
+    style="color:green"
+  ></a>
+</p>
+&nbsp;
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ابزارهای تحلیل مغز</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="گزاره-شرطی" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">فصل 9</span> گزاره شرطی<a href="گزاره-شرطی.html#گزاره-شرطی" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="گزاره-شرطی-conditional-statements" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> <strong>گزاره شرطی <span dir="ltr">Conditional Statements</span></strong>:<a href="گزاره-شرطی.html#گزاره-شرطی-conditional-statements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>گزاره شرطی را
+<strong><span dir="ltr"><code>if-else</code></span></strong>
+نیز می‌نامند:</p>
+<ul>
+<li><p>اگر گزاره درست
+<strong>(<code>true</code>)</strong>
+باشد کاری انجام شود.</p></li>
+<li><p>اگر گزاره غلط
+<strong>(<code>false</code>)</strong>
+باشد کار دیگری انجام شود.</p></li>
+</ul>
+</div>
+<div id="گزاره-اگر" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> گزاره اگر …<a href="گزاره-شرطی.html#گزاره-اگر" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>اگر درست بود پس فلان کار را انجام بده.
+برای مثال در کد زیر اگر سن بزرگتر از ده بود
+عبارت
+<code>The age is greater than 10.</code>
+را چاپ کن:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="گزاره-شرطی.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> age=20</span>
+<span id="cb51-2"><a href="گزاره-شرطی.html#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="گزاره-شرطی.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> if [[ <span class="va">$age</span> <span class="at">-gt</span> 10 ]]</span>
+<span id="cb51-4"><a href="گزاره-شرطی.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> then</span>
+<span id="cb51-5"><a href="گزاره-شرطی.html#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The age is greater than 10.&quot;</span></span>
+<span id="cb51-6"><a href="گزاره-شرطی.html#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> fi</span></code></pre></div>
+<pre><code>The age is greater than 10.</code></pre>
+<p>مثل حقله <code>for</code>
+گزاره <code>if-else</code>
+هم سه بخش دارد.</p>
+<ol style="list-style-type: decimal">
+<li><strong>گزاره شرطی <span dir="ltr">Conditional Statement</span></strong>:</li>
+</ol>
+<p>اولین بخش با کلمه کلیدی
+<code>if</code>
+شروع می‌شود. و پس از چک کردن شرط
+که در بین براکت
+(<span dir="ltr"><code>[[]]</code></span>)
+نوشته می‌شود، در صورت درست بودن شرط به بخش بعد می‌رود.</p>
+<p>در گزاره
+<code>$age -gt 10</code>
+بیشتر بودن سن را چک می‌کند.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>بدنه (Body)</strong>:</li>
+</ol>
+<p>درصوت درست بودن بخش اول دستورات این بخش اجرا می‌شود که با
+کلمه کلیدی
+<code>then</code>
+شروع می‌شود.
+که کاری که مد نظرمان هست را بعد آن می‌نویسیم.
+که می‌تواند شامل دستورات زیادی باشد.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>اتمام End</strong>:</li>
+</ol>
+<p>در این بخش فقط کلمه کلیدی
+<code>fi</code>
+را می‌نویسیم که بیانگر اتمام گزاره شرطی است.</p>
+</div>
+<div id="گزاره-اگر-و-دیگر" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> گزاره اگر و دیگر<a href="گزاره-شرطی.html#گزاره-اگر-و-دیگر" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>در این گزاره یک حالت دیگر
+<code>else</code>
+هم وجود دارد که اگر شرط
+<code>if</code>
+غلط بود دستورات دستورات دیگری اجرا می‌شود.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="گزاره-شرطی.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> age=8</span>
+<span id="cb53-2"><a href="گزاره-شرطی.html#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="گزاره-شرطی.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> if [[ <span class="va">$age</span> <span class="at">-gt</span> 10 ]]</span>
+<span id="cb53-4"><a href="گزاره-شرطی.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> then</span>
+<span id="cb53-5"><a href="گزاره-شرطی.html#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The age is greater than 10.&quot;</span></span>
+<span id="cb53-6"><a href="گزاره-شرطی.html#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> else</span>
+<span id="cb53-7"><a href="گزاره-شرطی.html#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The variable is equal or less than 10.&quot;</span></span>
+<span id="cb53-8"><a href="گزاره-شرطی.html#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> fi</span></code></pre></div>
+<pre><code>The variable is equal or less than 10.</code></pre>
+</div>
+<div id="گزاره-شرطی-اگر-و-دیگر-اگر-و-دیگر" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> گزاره شرطی «اگر» و «دیگر اگر» و «دیگر»<a href="گزاره-شرطی.html#گزاره-شرطی-اگر-و-دیگر-اگر-و-دیگر" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>در این گزاره یک حال دیگر اگر
+<code>elif</code>
+وجود دارد که اگر شرط اول درست نبود
+گزاره شرطی دیگری را بررسی می‌کند.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="گزاره-شرطی.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> age=10</span>
+<span id="cb55-2"><a href="گزاره-شرطی.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="گزاره-شرطی.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> if [[ <span class="va">$VAR</span> <span class="at">-gt</span> 10 ]]</span>
+<span id="cb55-4"><a href="گزاره-شرطی.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> then</span>
+<span id="cb55-5"><a href="گزاره-شرطی.html#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The variable is greater than 10.&quot;</span></span>
+<span id="cb55-6"><a href="گزاره-شرطی.html#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> elif <span class="kw">[[</span> <span class="va">$VAR</span> <span class="ot">-eq</span> 10 <span class="kw">]]</span></span>
+<span id="cb55-7"><a href="گزاره-شرطی.html#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> then</span>
+<span id="cb55-8"><a href="گزاره-شرطی.html#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The variable is equal to 10.&quot;</span></span>
+<span id="cb55-9"><a href="گزاره-شرطی.html#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> else</span>
+<span id="cb55-10"><a href="گزاره-شرطی.html#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The variable is less than 10.&quot;</span></span>
+<span id="cb55-11"><a href="گزاره-شرطی.html#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> fi</span></code></pre></div>
+<pre><code>The variable is equal to 10.</code></pre>
+</div>
+<div id="عملگر-و" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> عملگر «و»<a href="گزاره-شرطی.html#عملگر-و" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>با عملگر «و»
+<code>&amp;&amp;</code>
+می‌توان دو شرط را باهم در یک گزاره بررسی کرد که اگر
+هر دو شرایط درست بودند دستورات در بدنه اجرا شود.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb57-1"><a href="گزاره-شرطی.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> age=20</span>
+<span id="cb57-2"><a href="گزاره-شرطی.html#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="گزاره-شرطی.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> if [[ <span class="va">$VAR</span> <span class="at">-gt</span> 10 <span class="kw">&amp;&amp;</span> <span class="va">$VAR</span> <span class="at">-lt</span> 30 ]]</span>
+<span id="cb57-4"><a href="گزاره-شرطی.html#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> then</span>
+<span id="cb57-5"><a href="گزاره-شرطی.html#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The variable is in the range of 10 to 30.&quot;</span></span>
+<span id="cb57-6"><a href="گزاره-شرطی.html#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> else</span>
+<span id="cb57-7"><a href="گزاره-شرطی.html#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The variable is not between 10 and 30.&quot;</span></span>
+<span id="cb57-8"><a href="گزاره-شرطی.html#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> fi</span></code></pre></div>
+<pre><code>The variable is in the range of 10 to 30.</code></pre>
+</div>
+<div id="عملگر-یا" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> عملگر «یا»<a href="گزاره-شرطی.html#عملگر-یا" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>با استفاده از عملگر «یا»
+<code>||</code>
+می‌توانیم دو شرط را در یک گزاره بررسی کنیم که اگر یکی
+از آن‌ها برقرار بود دستورات بدنه اجرا شود.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="گزاره-شرطی.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> age=50</span>
+<span id="cb59-2"><a href="گزاره-شرطی.html#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="گزاره-شرطی.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> if [[ <span class="va">$VAR</span> <span class="at">-lt</span> 10 <span class="kw">||</span> <span class="va">$VAR</span> <span class="at">-gt</span> 30 ]]</span>
+<span id="cb59-4"><a href="گزاره-شرطی.html#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> then</span>
+<span id="cb59-5"><a href="گزاره-شرطی.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The variable is not between 10 and 30.&quot;</span></span>
+<span id="cb59-6"><a href="گزاره-شرطی.html#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> else</span>
+<span id="cb59-7"><a href="گزاره-شرطی.html#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   echo <span class="st">&quot;The variable is in the range of 10 to 30.&quot;</span></span>
+<span id="cb59-8"><a href="گزاره-شرطی.html#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> fi</span></code></pre></div>
+<pre><code>The variable is not between 10 and 30.</code></pre>
+</div>
+<div id="آزمونها" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> آزمون‌ها<a href="گزاره-شرطی.html#آزمونها" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><span dir="ltr"><code>-n VAR</code></span>:
+اگر اندازه
+<code>VAR</code>
+بیشتر از صفر باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>-z VAR</code></span>:
+اگر
+<code>VAR</code>
+خالی باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>STR1 == STR2</code></span>:
+اگر رشته
+<code>STR1</code>
+با رشته
+<code>STR2</code>
+مساوی باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>STR1 != STR2</code></span>:
+اگر رشته
+<code>STR1</code>
+با رشته
+<code>STR2</code>
+مساوی نباشد درست است.</p></li>
+<li><p><span dir="ltr"><code>INT1 -eq INT2</code></span>:
+اگر عدد
+<code>INT1</code>
+با عدد
+<code>INT</code>
+مساوی باشند درست است.</p></li>
+<li><p><span dir="ltr"><code>INT1 -gt INT2</code></span>:
+اگر عدد
+<code>INT1</code>
+از عدد
+<code>INT2</code>
+بزرگتر باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>INT1 -lt INT2</code></span>:
+اگر عدد
+<code>INT1</code>
+از عدد
+<code>INT2</code>
+کوچکتر باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>INT1 -ge INT2</code></span>:
+اگر عدد
+<code>INT1</code>
+از عدد
+<code>INT2</code>
+بزرگتر یا مساوی باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>INT1 -le INT2</code></span>:
+اگر عدد
+<code>INT1</code>
+از عدد
+<code>INT2</code>
+کوچکتر یا مساوی باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>-h FILE</code></span>:
+اگر
+<code>FILE</code>
+وجود داشته و یک پیوند نمادین باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>-r FILE</code></span>:
+اگر
+<code>FILE</code>
+وجود داشته و قابل خواندن باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>-w FILE</code></span>:
+اگر
+<code>FILE</code>
+وجود داشته و قابل نوشتن باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>-x FILE</code></span>:
+اگر
+<code>FILE</code>
+وجود داشته و قابل اجرا باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>-d FILE</code></span>:
+اگر
+<code>FILE</code>
+وجود داشته و یک پوشه باشد درست است.</p></li>
+<li><p><span dir="ltr"><code>-e FILE</code></span>:
+اگر
+<code>FILE</code>
+وجود داشته و فایل باشد .
+(بدون در نظر گرفتن نوع آن)
+درست است.</p></li>
+<li><p><span dir="ltr"><code>-f FILE</code></span>:
+اگر
+<code>FILE</code>
+وجود داشته و یک فایل متنی باشد
+(مثلا پوشه یا دستگاه نباشد.)
+درست است.</p></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="متغییر.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": true,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"info": false
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>فصل 7 حلقه for | ابزارهای تحلیل مغز</title>
+  <meta name="description" content="فصل 7 حلقه for | ابزارهای تحلیل مغز" />
+  <meta name="generator" content="bookdown 0.28.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="فصل 7 حلقه for | ابزارهای تحلیل مغز" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="https://mohsenebrahimyir.github.io/base-bash/./img/cover.jpg" />
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="فصل 7 حلقه for | ابزارهای تحلیل مغز" />
+  
+  
+  <meta name="twitter:image" content="https://mohsenebrahimyir.github.io/base-bash/./img/cover.jpg" />
+
+<meta name="author" content="محسن ابراهیمی" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="شل.html"/>
+<link rel="next" href="متغییر.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<!DOCTYPE HTML>
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+<link 
+  rel="preconnect" 
+  href="https://fonts.gstatic.com" 
+  crossorigin
+>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300&display=swap"
+>
+<link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+>
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="stl/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">مبانی Bash</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>پیش گفتار</a></li>
+<li class="chapter" data-level="" data-path="مقدمه.html"><a href="مقدمه.html"><i class="fa fa-check"></i>مقدمه</a></li>
+<li class="chapter" data-level="1" data-path="آموزش-لینوکس-و-یونیکس.html"><a href="آموزش-لینوکس-و-یونیکس.html"><i class="fa fa-check"></i><b>1</b> آموزش لینوکس و یونیکس</a></li>
+<li class="chapter" data-level="2" data-path="مسیرها-و-پوشهها.html"><a href="مسیرها-و-پوشهها.html"><i class="fa fa-check"></i><b>2</b> مسیرها و پوشه‌ها</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="مسیرها-و-پوشهها.html"><a href="مسیرها-و-پوشهها.html#آدرس-دهی"><i class="fa fa-check"></i><b>2.1</b> آدرس دهی</a></li>
+<li class="chapter" data-level="2.2" data-path="مسیرها-و-پوشهها.html"><a href="مسیرها-و-پوشهها.html#دستورات-کاربردی"><i class="fa fa-check"></i><b>2.2</b> دستورات کاربردی</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="کار-با-فایلها-و-پوشهها.html"><a href="کار-با-فایلها-و-پوشهها.html"><i class="fa fa-check"></i><b>3</b> کار با فایل‌ها و پوشه‌ها</a></li>
+<li class="chapter" data-level="4" data-path="واژههای-کلیدی.html"><a href="واژههای-کلیدی.html"><i class="fa fa-check"></i><b>4</b> واژه‌های کلیدی</a></li>
+<li class="chapter" data-level="5" data-path="خواندن-فایل.html"><a href="خواندن-فایل.html"><i class="fa fa-check"></i><b>5</b> خواندن فایل</a></li>
+<li class="chapter" data-level="6" data-path="شل.html"><a href="شل.html"><i class="fa fa-check"></i><b>6</b> شل</a></li>
+<li class="chapter" data-level="7" data-path="حلقه-for.html"><a href="حلقه-for.html"><i class="fa fa-check"></i><b>7</b> حلقه <code>for</code></a></li>
+<li class="chapter" data-level="8" data-path="متغییر.html"><a href="متغییر.html"><i class="fa fa-check"></i><b>8</b> متغییر</a></li>
+<li class="chapter" data-level="9" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html"><i class="fa fa-check"></i><b>9</b> گزاره شرطی</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#گزاره-شرطی-conditional-statements"><i class="fa fa-check"></i><b>9.1</b> <strong>گزاره شرطی <span dir="ltr">Conditional Statements</span></strong>:</a></li>
+<li class="chapter" data-level="9.2" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#گزاره-اگر"><i class="fa fa-check"></i><b>9.2</b> گزاره اگر …</a></li>
+<li class="chapter" data-level="9.3" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#گزاره-اگر-و-دیگر"><i class="fa fa-check"></i><b>9.3</b> گزاره اگر و دیگر</a></li>
+<li class="chapter" data-level="9.4" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#گزاره-شرطی-اگر-و-دیگر-اگر-و-دیگر"><i class="fa fa-check"></i><b>9.4</b> گزاره شرطی «اگر» و «دیگر اگر» و «دیگر»</a></li>
+<li class="chapter" data-level="9.5" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#عملگر-و"><i class="fa fa-check"></i><b>9.5</b> عملگر «و»</a></li>
+<li class="chapter" data-level="9.6" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#عملگر-یا"><i class="fa fa-check"></i><b>9.6</b> عملگر «یا»</a></li>
+<li class="chapter" data-level="9.7" data-path="گزاره-شرطی.html"><a href="گزاره-شرطی.html#آزمونها"><i class="fa fa-check"></i><b>9.7</b> آزمون‌ها</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>منابع</a></li>
+<li class="divider"></li>
+&nbsp;
+<hr />
+<p style="text-align: center;">
+    <a href="https://mohsenebrahimy.ir/">
+    محسن ابراهیمی
+    <br/>
+    <span style="color: #808080;">
+      <em>www.mohsenebrahimy.ir</em>
+    </span>
+  </a>
+</p>
+<p style="text-align: center;">
+  <a
+    href="https://web.whatsapp.com/send?phone=989118645816" 
+    class="fa fa-whatsapp fa-3x" 
+    style="color:green"
+  ></a>
+</p>
+&nbsp;
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ابزارهای تحلیل مغز</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="حلقه-for" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">فصل 7</span> حلقه <code>for</code><a href="حلقه-for.html#حلقه-for" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>خیلی از کارهایی که در عمل انجام می‌شود شامل کارهایی
+کوچک تکراری است که به طور متناوب برای موارد مختلف اجرا
+می‌شود.</p>
+<p>اینگونه کار‌ها را به استفاده از حلقه‌ها اجرا می‌کنند.</p>
+<ul>
+<li><strong>حلقه for</strong></li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="حلقه-for.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for i in 1 2 3</span>
+<span id="cb25-2"><a href="حلقه-for.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> do <span class="bu">echo</span> <span class="va">$i</span></span>
+<span id="cb25-3"><a href="حلقه-for.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre></div>
+<pre><code>1
+2
+3</code></pre>
+<p>می‌تواینم همین کد را تک خطی نیز بنویسیم</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="حلقه-for.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for i in 1 2 3<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$i</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<pre><code>1
+2
+3</code></pre>
+<p>حلقه <code>for</code>
+سه بخش دارد که اگر یک خطی بنویسیم باید آن‌ها را با
+<code>;</code>
+جدا کنیم.</p>
+<ol style="list-style-type: decimal">
+<li><strong>اعلامیه (Declaration)</strong>:</li>
+</ol>
+<p>در بخش
+<span dir="ltr"><code>for i in 1 2 3;</code></span>
+به ترتیب موارد بعد از
+<code>in</code>
+را به متغییر
+<code>i</code>
+اختصاص می‌دهد.
+شماره‌هایی که بعد از
+<code>in</code>
+آمده‌اند را
+<strong>لیست (list)</strong>
+می‌نامند.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>بدنه (Body)</strong>:</li>
+</ol>
+<p>در بخش
+<span dir="ltr"><code>do echo $i;</code></span>
+هر دستوری که بعد از
+<code>do</code>
+نوشته شود برای هر مورد می‌تواند تکرار شود.
+برای مثال اینجا به ترتیب هر شماره با تابع
+<code>echo</code>
+چاپ می‌شود.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>اتمام (End)</strong>:</li>
+</ol>
+<p>در این بخش
+<code>done</code>
+تنها شامل یک کلمه است که به معنای خارج شدن از حلقه بعد
+از اجرا برای همه موارد درون لیست است.</p>
+<p>می‌توان بخش‌های بیشتری را با گذاشتن
+<code>;</code>
+انتهای آن به بدنه اضافه نمود.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="حلقه-for.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for i in 1 2 3<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$i</span><span class="kw">;</span> <span class="bu">echo</span> “You just printed the number <span class="va">$i</span>”<span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<pre><code>1
+“You just printed the number 1”
+2
+“You just printed the number 2”
+3
+“You just printed the number 3”</code></pre>
+<p>مثلا اگر ما تعدادی اسامی به صورت
+<code>sub-01</code>
+داشته باشیم می‌توانیم به زیر برای هر یک یه حلقه ایجاد کنیم</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="حلقه-for.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for i in sub-01 sub-02 … sub-26<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$i</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<pre><code>sub-01
+sub-02
+…
+sub-26</code></pre>
+<p>اما یک روش ساده تر برای نوشتن کد این است که
+از دستور
+<code>seq 1 10</code>
+برای ایجاد لیستی از اعداد یک تا ده استفاده کنیم تا
+از نوشتن کد تکراری جلوگیری کنیم.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="حلقه-for.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for i in <span class="kw">`</span><span class="fu">seq</span> 1 26<span class="kw">`;</span> <span class="cf">do</span> <span class="bu">echo</span> “sub-<span class="va">$i</span>”<span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<pre><code>sub-1
+sub-2
+…
+sub-26</code></pre>
+<p>اگر بخواهیم حتما اعداد به صورت دورقمی چاپ شوند
+یعنی قبل از اعداد یک رقمی یه رقم صفر نیز باشد می‌توانیم
+به صورت زیر نیز عمل کنیم.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="حلقه-for.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for i in <span class="kw">`</span><span class="fu">seq</span> <span class="at">-w</span> 1 26<span class="kw">`;</span> <span class="cf">do</span> <span class="bu">echo</span> “sub-<span class="va">$i</span>”<span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<pre><code>sub-01
+sub-02
+…
+sub-26</code></pre>
+<p>با استفاده از دستور
+<code>ls</code>
+می‌توانیم بر روی لیستی از فایل‌های درون یک پوشه
+(مثلا پوشه خانه
+<span dir="ltr"><code>~/</code></span>
+)
+حلقه اجرا کنیم.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="حلقه-for.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for i in <span class="kw">`</span><span class="fu">ls</span> ~/<span class="kw">`;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$i</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<pre><code>bin
+Desktop
+Documents
+Downloads
+…</code></pre>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="شل.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="متغییر.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": true,
+"all": null
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"info": false
+});
+});
+</script>
+
+</body>
+
+</html>
